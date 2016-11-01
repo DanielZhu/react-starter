@@ -1,0 +1,20 @@
+.twitter-app {
+  position: relative;
+  width: 550px;
+  height: auto;
+  margin: 20px auto;
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #26b574;
+  border-radius: 10px;
+  .separator {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 10%;
+    background-color: #d6d5d5;
+    height: 1px;
+    margin: 15px auto;
+  }
+}

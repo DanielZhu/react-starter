@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "es2015",
+    "react",
+    "stage-2"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "babel-plugin-rewire",
+        "trasnform-react-jsx-source"
+      ]
+    }
+  }
+}

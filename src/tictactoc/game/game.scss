@@ -1,0 +1,55 @@
+.game-row {
+  position: relative;
+  text-align: center;
+  &:after {
+    content: '';
+    position: relative;
+    height: 0;
+    clear: both;
+    display: block;
+    font-size: 0;
+  }
+  &:before {
+
+  }
+}
+.ttt-game {
+  position: relative;
+  width: 550px;
+  height: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #26b574;
+  border-radius: 10px;
+  .game-wrapper {
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+  }
+  .game-playing-area {
+    text-align: left;
+    width: 64px * 3;
+    flex: 1;
+  }
+  .game-canvas {
+    margin-top: 30px;
+  }
+  .game-steps {
+    flex: 1;
+    li {
+      color: #6457ff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .separator {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 10%;
+    background-color: #d6d5d5;
+    height: 1px;
+    margin: 15px auto;
+  }
+}

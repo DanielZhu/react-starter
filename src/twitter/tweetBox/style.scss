@@ -1,0 +1,48 @@
+.tweet-box {
+  position: relative;
+  margin: 0 auto;
+  .tweet-box-textarea {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: lighten(#26b574, 15%);
+    margin-top: 20px;
+    line-height: 1.3;
+    resize: none;
+    &.warn {
+      border-color: orange;
+    }
+    &.ok {
+      border-color: #008900;
+    }
+  }
+  .tweet-box-toolbar {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    .submit-button {
+      float: right;
+      background-color: #008900;
+      border-radius: 8px;
+      color: #fff;
+      padding: 5px 15px;
+      user-select: none;
+      transition: all .2s ease;
+      cursor: pointer;
+      &:hover {
+        background-color: darken(#008900, 5%);
+      }
+      &.warn {
+        background-color: #eee;
+      }
+      &.ok {
+        border-color: #008900;
+      }
+    }
+  }
+}

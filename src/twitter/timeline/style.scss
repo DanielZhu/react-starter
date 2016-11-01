@@ -1,0 +1,24 @@
+.timeline-tweet {
+  &:after {
+    content: '';
+    position: relative;
+    height: 0;
+    clear: both;
+    display: block;
+    font-size: 0;
+  }
+  &:before {
+
+  }
+}
+.timeline-container {
+  position: relative;
+  margin-top: 20px;
+  padding: 0;
+  height: 350px;
+  overflow: scroll;
+}
+.empty-tip {
+  padding: 80px 0;
+  color: #999;
+}
