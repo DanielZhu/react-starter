@@ -34,16 +34,16 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-            'url?limit=8192',
-            'img'
+          'url?limit=8192',
+          'img'
         ]
       },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loaders: [
-            'react-hot',
-            'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
+          'react-hot',
+          'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
         ]
       },
       {
