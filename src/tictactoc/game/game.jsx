@@ -161,7 +161,7 @@ class TictactocContainer extends Component {
   rollback(step) {
     this.setState({
       steps: this.state.steps.slice(0, step),
-      data: this.state.steps.slice(0, step).length > 0 ? this.state.steps[step - 1].value : [],
+      data: this.state.steps.slice(0, step).length > 0 ? this.state.steps[step - 1].value : Array(9).fill(null),
       result: {winCells: [], win: false, winner: ''}
     });
   }
