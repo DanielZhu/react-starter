@@ -1,5 +1,5 @@
 /**
- * Main container for Tic-Tac-Toc
+ * Main container for Tic-Tac-Toe
  *
  * @date 2016 Oct. 29
  * @author Daniel.Zhu <enterzhu@gmail.com>

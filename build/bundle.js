@@ -27616,7 +27616,7 @@
 	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
 	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	} /**
-	   * Main container for Tic-Tac-Toc
+	   * Main container for Tic-Tac-Toe
 	   *
 	   * @date 2016 Oct. 29
 	   * @author Daniel.Zhu <enterzhu@gmail.com>
@@ -27624,19 +27624,19 @@
 	
 	__webpack_require__(246);
 	
-	var TictactocContainer = function (_Component) {
-	  _inherits(TictactocContainer, _Component);
+	var TictactoeContainer = function (_Component) {
+	  _inherits(TictactoeContainer, _Component);
 	
-	  function TictactocContainer(props) {
-	    _classCallCheck(this, TictactocContainer);
+	  function TictactoeContainer(props) {
+	    _classCallCheck(this, TictactoeContainer);
 	
-	    var _this = _possibleConstructorReturn(this, (TictactocContainer.__proto__ || Object.getPrototypeOf(TictactocContainer)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (TictactoeContainer.__proto__ || Object.getPrototypeOf(TictactoeContainer)).call(this, props));
 	
 	    _this.state = { steps: [], data: Array(9).fill(null), size: 3, result: { winCells: [], win: false, winner: '' } };
 	    return _this;
 	  }
 	
-	  _createClass(TictactocContainer, [{
+	  _createClass(TictactoeContainer, [{
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate() {
 	      // this.progress();
@@ -27789,16 +27789,16 @@
 	    value: function render() {
 	      var _this2 = this;
 	
-	      return _react2.default.createElement('div', { className: 'ttt-game' }, _react2.default.createElement('h2', null, 'Tic Tac Toc Game'), _react2.default.createElement('div', { className: 'game-wrapper' }, _react2.default.createElement('div', { className: 'game-playing-area' }, _react2.default.createElement('div', { onClick: this.restart.bind(this), className: 'restart-button' }, 'Restart'), _react2.default.createElement('div', { className: 'game-status' }, this.state.result.win ? 'Winned by ' + this.state.result.winner : this.state.steps.length === 9 ? 'Game Over ^_^' : _react2.default.createElement('span', { className: 'current-player' }, 'Currnet Player: ', this.state.steps.length % 2 === 0 ? 'O' : 'X')), _react2.default.createElement('div', { className: 'game-canvas' }, this.renderCanvas())), _react2.default.createElement('ul', { className: 'game-steps' }, this.state.steps.map(function (history, historyIdx) {
+	      return _react2.default.createElement('div', { className: 'ttt-game' }, _react2.default.createElement('h2', null, 'Tictactoe Game'), _react2.default.createElement('div', { className: 'game-wrapper' }, _react2.default.createElement('div', { className: 'game-playing-area' }, _react2.default.createElement('div', { onClick: this.restart.bind(this), className: 'restart-button' }, 'Restart'), _react2.default.createElement('div', { className: 'game-status' }, this.state.result.win ? 'Winned by ' + this.state.result.winner : this.state.steps.length === 9 ? 'Game Over ^_^' : _react2.default.createElement('span', { className: 'current-player' }, 'Currnet Player: ', this.state.steps.length % 2 === 0 ? 'O' : 'X')), _react2.default.createElement('div', { className: 'game-canvas' }, this.renderCanvas())), _react2.default.createElement('ul', { className: 'game-steps' }, this.state.steps.map(function (history, historyIdx) {
 	        return _react2.default.createElement('li', { key: 'historyStep_' + historyIdx, onClick: _this2.rollback.bind(_this2, historyIdx) }, 'Move #', historyIdx);
 	      }))));
 	    }
 	  }]);
 	
-	  return TictactocContainer;
+	  return TictactoeContainer;
 	}(_react.Component);
 	
-	exports.default = TictactocContainer;
+	exports.default = TictactoeContainer;
 	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/danielzhu/nut/Enjoys/staydan.com/react-starter/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "game.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -28025,7 +28025,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".game-row {\n  position: relative;\n  text-align: center; }\n  .game-row:after {\n    content: '';\n    position: relative;\n    height: 0;\n    clear: both;\n    display: block;\n    font-size: 0; }\n\n.ttt-game {\n  position: relative;\n  width: 550px;\n  height: 600px;\n  margin: 20px auto;\n  background: #fff;\n  padding: 20px;\n  border: 2px solid #26b574;\n  border-radius: 10px; }\n  .ttt-game .game-wrapper {\n    position: relative;\n    display: flex;\n    margin-top: 50px; }\n  .ttt-game .game-playing-area {\n    text-align: left;\n    width: 192px;\n    flex: 1; }\n  .ttt-game .game-canvas {\n    margin-top: 30px; }\n  .ttt-game .game-steps {\n    flex: 1;\n    text-align: center; }\n    .ttt-game .game-steps li {\n      color: #6457ff;\n      cursor: pointer;\n      text-decoration: underline; }\n  .ttt-game .separator {\n    position: relative;\n    text-align: center;\n    display: block;\n    width: 10%;\n    background-color: #d6d5d5;\n    height: 1px;\n    margin: 15px auto; }\n  .ttt-game .restart-button {\n    min-width: 80px;\n    height: 30px;\n    line-height: 30px;\n    background-color: #2b2b2b;\n    color: #fff;\n    text-align: center;\n    cursor: pointer; }\n    .ttt-game .restart-button:hover {\n      background-color: #5e5e5e; }\n  .ttt-game p {\n    line-height: 2; }\n  .ttt-game .game-status {\n    position: relative;\n    margin-top: 10px;\n    vertical-align: middle; }\n", ""]);
+	exports.push([module.id, ".game-row {\n  position: relative;\n  text-align: center; }\n  .game-row:after {\n    content: '';\n    position: relative;\n    height: 0;\n    clear: both;\n    display: block;\n    font-size: 0; }\n\n.ttt-game {\n  position: relative;\n  width: 550px;\n  height: 400px;\n  margin: 20px auto;\n  background: #fff;\n  padding: 20px;\n  border: 2px solid #26b574;\n  border-radius: 10px; }\n  .ttt-game .game-wrapper {\n    position: relative;\n    display: flex;\n    margin-top: 50px; }\n  .ttt-game .game-playing-area {\n    text-align: left;\n    width: 192px;\n    flex: 1; }\n  .ttt-game .game-canvas {\n    margin-top: 30px; }\n  .ttt-game .game-steps {\n    flex: 1;\n    text-align: center; }\n    .ttt-game .game-steps li {\n      color: #6457ff;\n      cursor: pointer;\n      text-decoration: underline; }\n  .ttt-game .separator {\n    position: relative;\n    text-align: center;\n    display: block;\n    width: 10%;\n    background-color: #d6d5d5;\n    height: 1px;\n    margin: 15px auto; }\n  .ttt-game .restart-button {\n    min-width: 80px;\n    height: 30px;\n    line-height: 30px;\n    background-color: #2b2b2b;\n    color: #fff;\n    text-align: center;\n    cursor: pointer; }\n    .ttt-game .restart-button:hover {\n      background-color: #5e5e5e; }\n  .ttt-game p {\n    line-height: 2; }\n  .ttt-game .game-status {\n    position: relative;\n    margin-top: 10px;\n    vertical-align: middle; }\n", ""]);
 	
 	// exports
 
@@ -28097,7 +28097,7 @@
 	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
 	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	} /**
-	   * Main container for Tic-Tac-Toc
+	   * Main container for Tic-Tac-Toe
 	   *
 	   * @date 2016 Oct. 29
 	   * @author Daniel.Zhu <enterzhu@gmail.com>
@@ -28197,7 +28197,7 @@
 	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
 	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	} /**
-	   * Main container for Tic-Tac-Toc
+	   * Main container for Tic-Tac-Toe
 	   *
 	   * @date 2016 Oct. 29
 	   * @author Daniel.Zhu <enterzhu@gmail.com>
@@ -28289,7 +28289,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".tweet-box {\n  position: relative;\n  margin: 0 auto; }\n  .tweet-box .tweet-box-textarea {\n    position: relative;\n    padding: 10px;\n    width: 100%;\n    font-size: 20px;\n    border: 1px solid #ddd;\n    box-sizing: border-box;\n    border-radius: 10px;\n    color: #4eda9a;\n    margin-top: 20px;\n    line-height: 1.3;\n    resize: none; }\n    .tweet-box .tweet-box-textarea.warn {\n      border-color: orange; }\n    .tweet-box .tweet-box-textarea.ok {\n      border-color: #008900; }\n  .tweet-box .tweet-box-toolbar {\n    position: relative;\n    width: 100%;\n    text-align: left;\n    margin-top: 10px; }\n    .tweet-box .tweet-box-toolbar .submit-button {\n      float: right;\n      background-color: #008900;\n      border-radius: 8px;\n      color: #fff;\n      padding: 5px 15px;\n      user-select: none;\n      transition: all .2s ease;\n      cursor: pointer; }\n      .tweet-box .tweet-box-toolbar .submit-button:hover {\n        background-color: #007000; }\n      .tweet-box .tweet-box-toolbar .submit-button.warn {\n        background-color: #eee; }\n      .tweet-box .tweet-box-toolbar .submit-button.ok {\n        border-color: #008900; }\n", ""]);
+	exports.push([module.id, ".tweet-box {\n  position: relative;\n  margin: 0 auto; }\n  .tweet-box .tweet-box-textarea {\n    position: relative;\n    padding: 10px;\n    width: 100%;\n    font-size: 20px;\n    border: 1px solid #ddd;\n    box-sizing: border-box;\n    border-radius: 10px;\n    color: #4eda9a;\n    margin-top: 20px;\n    line-height: 1.3;\n    resize: none;\n    outline: 0; }\n    .tweet-box .tweet-box-textarea.warn {\n      border-color: orange; }\n    .tweet-box .tweet-box-textarea.ok {\n      border-color: #008900; }\n  .tweet-box .tweet-box-toolbar {\n    position: relative;\n    width: 100%;\n    text-align: left;\n    margin-top: 10px; }\n    .tweet-box .tweet-box-toolbar .submit-button {\n      float: right;\n      background-color: #008900;\n      border-radius: 8px;\n      color: #fff;\n      padding: 5px 15px;\n      user-select: none;\n      transition: all .2s ease;\n      cursor: pointer; }\n      .tweet-box .tweet-box-toolbar .submit-button:hover {\n        background-color: #007000; }\n      .tweet-box .tweet-box-toolbar .submit-button.warn {\n        background-color: #eee; }\n      .tweet-box .tweet-box-toolbar .submit-button.ok {\n        border-color: #008900; }\n", ""]);
 	
 	// exports
 
@@ -28351,7 +28351,7 @@
 	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
 	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	} /**
-	   * Main container for Tic-Tac-Toc
+	   * Main container for Tic-Tac-Toe
 	   *
 	   * @date 2016 Oct. 29
 	   * @author Daniel.Zhu <enterzhu@gmail.com>
@@ -29448,7 +29448,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".timeline-tweet:after {\n  content: '';\n  position: relative;\n  height: 0;\n  clear: both;\n  display: block;\n  font-size: 0; }\n\n.timeline-container {\n  position: relative;\n  margin-top: 20px;\n  padding: 0;\n  height: 350px;\n  overflow: scroll; }\n\n.empty-tip {\n  padding: 80px 0;\n  color: #999; }\n", ""]);
+	exports.push([module.id, ".timeline-tweet:after {\n  content: '';\n  position: relative;\n  height: 0;\n  clear: both;\n  display: block;\n  font-size: 0; }\n\n.timeline-container {\n  position: relative;\n  margin-top: 20px;\n  padding: 0;\n  height: 350px;\n  overflow-y: scroll; }\n  .timeline-container::-webkit-scrollbar {\n    height: 2px; }\n  .timeline-container::-webkit-scrollbar-track {\n    border-radius: 5px;\n    background: #0094AE;\n    margin: 0 10px 10px 10px; }\n  .timeline-container::-webkit-scrollbar-thumb {\n    background-color: #66BFCE;\n    border-radius: 5px; }\n\n.empty-tip {\n  padding: 80px 0;\n  color: #999; }\n", ""]);
 	
 	// exports
 

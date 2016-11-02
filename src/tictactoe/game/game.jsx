@@ -1,5 +1,5 @@
 /**
- * Main container for Tic-Tac-Toc
+ * Main container for Tic-Tac-Toe
  *
  * @date 2016 Oct. 29
  * @author Daniel.Zhu <enterzhu@gmail.com>
@@ -9,7 +9,7 @@ import Cell from '../cell/cell';
 
 require('./game.scss');
 
-class TictactocContainer extends Component {
+class TictactoeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {steps: [], data: Array(9).fill(null), size: 3, result: {winCells: [], win: false, winner: ''}};
@@ -171,7 +171,7 @@ class TictactocContainer extends Component {
   render() {
     return (
       <div className="ttt-game">
-        <h2>Tic Tac Toc Game</h2>
+        <h2>Tictactoe Game</h2>
         <div className="game-wrapper">
           <div className="game-playing-area">
             <div onClick={this.restart.bind(this)} className="restart-button">Restart</div>
@@ -197,4 +197,4 @@ class TictactocContainer extends Component {
   }
 }
 
-export default TictactocContainer;
+export default TictactoeContainer;
