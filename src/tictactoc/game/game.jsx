@@ -36,7 +36,7 @@ class TictactocContainer extends Component {
     return canvas;
   }
   play(pos) {
-    const role = this.state.steps.length % 2 === 0 ? '○' : 'x';
+    const role = this.state.steps.length % 2 === 0 ? 'O' : 'X';
     if (this.state.result.win) {
       return;
     }
@@ -165,14 +165,19 @@ class TictactocContainer extends Component {
       result: {winCells: [], win: false, winner: ''}
     });
   }
+  restart() {
+    this.setState({steps: [], data: Array(9).fill(null), size: 3, result: {winCells: [], win: false, winner: ''}});
+  }
   render() {
     return (
       <div className="ttt-game">
         <h2>Tic Tac Toc Game</h2>
         <div className="game-wrapper">
           <div className="game-playing-area">
-            <p>{this.state.result.win ? 'Winned by ' + this.state.result.winner : 'Still playing'}</p>
-            <p>Current player: {this.state.steps.length % 2 === 0 ? '○' : 'x'}</p>
+            <div onClick={this.restart.bind(this)} className="restart-button">Restart</div>
+            <div className="game-status">
+              {this.state.result.win ? 'Winned by ' + this.state.result.winner : (this.state.steps.length === 9 ? 'Game Over ^_^' : <span className="current-player">Currnet Player: {this.state.steps.length % 2 === 0 ? 'O' : 'X'}</span>)}
+            </div>
             <div className="game-canvas">
               {this.renderCanvas()}
             </div>

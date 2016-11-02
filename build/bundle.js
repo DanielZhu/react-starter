@@ -27662,7 +27662,7 @@
 	  }, {
 	    key: 'play',
 	    value: function play(pos) {
-	      var role = this.state.steps.length % 2 === 0 ? '○' : 'x';
+	      var role = this.state.steps.length % 2 === 0 ? 'O' : 'X';
 	      if (this.state.result.win) {
 	        return;
 	      }
@@ -27782,11 +27782,16 @@
 	      });
 	    }
 	  }, {
+	    key: 'restart',
+	    value: function restart() {
+	      this.setState({ steps: [], data: Array(9).fill(null), size: 3, result: { winCells: [], win: false, winner: '' } });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
 	
-	      return _react2.default.createElement('div', { className: 'ttt-game' }, _react2.default.createElement('h2', null, 'Tic Tac Toc Game'), _react2.default.createElement('div', { className: 'game-wrapper' }, _react2.default.createElement('div', { className: 'game-playing-area' }, _react2.default.createElement('p', null, this.state.result.win ? 'Winned by ' + this.state.result.winner : 'Still playing'), _react2.default.createElement('p', null, 'Current player: ', this.state.steps.length % 2 === 0 ? '○' : 'x'), _react2.default.createElement('div', { className: 'game-canvas' }, this.renderCanvas())), _react2.default.createElement('ul', { className: 'game-steps' }, this.state.steps.map(function (history, historyIdx) {
+	      return _react2.default.createElement('div', { className: 'ttt-game' }, _react2.default.createElement('h2', null, 'Tic Tac Toc Game'), _react2.default.createElement('div', { className: 'game-wrapper' }, _react2.default.createElement('div', { className: 'game-playing-area' }, _react2.default.createElement('div', { onClick: this.restart.bind(this), className: 'restart-button' }, 'Restart'), _react2.default.createElement('div', { className: 'game-status' }, this.state.result.win ? 'Winned by ' + this.state.result.winner : this.state.steps.length === 9 ? 'Game Over ^_^' : _react2.default.createElement('span', { className: 'current-player' }, 'Currnet Player: ', this.state.steps.length % 2 === 0 ? 'O' : 'X')), _react2.default.createElement('div', { className: 'game-canvas' }, this.renderCanvas())), _react2.default.createElement('ul', { className: 'game-steps' }, this.state.steps.map(function (history, historyIdx) {
 	        return _react2.default.createElement('li', { key: 'historyStep_' + historyIdx, onClick: _this2.rollback.bind(_this2, historyIdx) }, 'Move #', historyIdx);
 	      }))));
 	    }
@@ -28022,7 +28027,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".game-row {\n  position: relative;\n  text-align: center; }\n  .game-row:after {\n    content: '';\n    position: relative;\n    height: 0;\n    clear: both;\n    display: block;\n    font-size: 0; }\n\n.ttt-game {\n  position: relative;\n  width: 550px;\n  height: 600px;\n  margin: 20px auto;\n  background: #fff;\n  padding: 20px;\n  border: 2px solid #26b574;\n  border-radius: 10px; }\n  .ttt-game .game-wrapper {\n    position: relative;\n    display: flex;\n    margin-top: 50px; }\n  .ttt-game .game-playing-area {\n    text-align: left;\n    width: 192px;\n    flex: 1; }\n  .ttt-game .game-canvas {\n    margin-top: 30px; }\n  .ttt-game .game-steps {\n    flex: 1; }\n    .ttt-game .game-steps li {\n      color: #6457ff;\n      cursor: pointer;\n      text-decoration: underline; }\n  .ttt-game .separator {\n    position: relative;\n    text-align: center;\n    display: block;\n    width: 10%;\n    background-color: #d6d5d5;\n    height: 1px;\n    margin: 15px auto; }\n", ""]);
+	exports.push([module.id, ".game-row {\n  position: relative;\n  text-align: center; }\n  .game-row:after {\n    content: '';\n    position: relative;\n    height: 0;\n    clear: both;\n    display: block;\n    font-size: 0; }\n\n.ttt-game {\n  position: relative;\n  width: 550px;\n  height: 600px;\n  margin: 20px auto;\n  background: #fff;\n  padding: 20px;\n  border: 2px solid #26b574;\n  border-radius: 10px; }\n  .ttt-game .game-wrapper {\n    position: relative;\n    display: flex;\n    margin-top: 50px; }\n  .ttt-game .game-playing-area {\n    text-align: left;\n    width: 192px;\n    flex: 1; }\n  .ttt-game .game-canvas {\n    margin-top: 30px; }\n  .ttt-game .game-steps {\n    flex: 1;\n    text-align: center; }\n    .ttt-game .game-steps li {\n      color: #6457ff;\n      cursor: pointer;\n      text-decoration: underline; }\n  .ttt-game .separator {\n    position: relative;\n    text-align: center;\n    display: block;\n    width: 10%;\n    background-color: #d6d5d5;\n    height: 1px;\n    margin: 15px auto; }\n  .ttt-game .restart-button {\n    min-width: 80px;\n    height: 30px;\n    line-height: 30px;\n    background-color: #2b2b2b;\n    color: #fff;\n    text-align: center;\n    cursor: pointer; }\n    .ttt-game .restart-button:hover {\n      background-color: #5e5e5e; }\n  .ttt-game p {\n    line-height: 2; }\n  .ttt-game .game-status {\n    position: relative;\n    margin-top: 10px;\n    vertical-align: middle; }\n", ""]);
 	
 	// exports
 
