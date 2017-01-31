@@ -1,0 +1,14 @@
+.test-container {
+  position: relative;
+  width: 100%;
+  background: lightgreen;
+  .test-text {
+    font-size: 14px;
+    position: relative;
+  }
+  .test-image {
+    float: right;
+    -webkit-clip-path: ellipse(26% 50% at 50% 50%);
+    clip-path: ellipse(26% 50% at 50% 50%);
+  }
+}

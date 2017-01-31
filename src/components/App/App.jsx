@@ -1,17 +1,17 @@
-require('./style.scss');
+require('./style.scss')
 
-import React from 'react';
+import React from 'react'
 
 export default class App extends React.Component {
-  render() {
+  render () {
     return (
-      <div className="app-wrapper">
+      <div className='app-wrapper'>
         {this.props.children || 'Something wrong'}
       </div>
-    );
+    )
   }
 }
 
 App.propTypes = {
 
-};
+}

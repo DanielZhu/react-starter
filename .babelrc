@@ -7,7 +7,6 @@
   "env": {
     "test": {
       "plugins": [
-        "babel-plugin-rewire",
         "trasnform-react-jsx-source"
       ]
     }

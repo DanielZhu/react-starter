@@ -1,8 +1,8 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path')
+// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: getEntrySources(['./entry.js']),
+  entry: getEntrySources(['./src/entry.js']),
   debug: true,
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -15,18 +15,16 @@ module.exports = {
     preLoaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
         loader: 'babel',
+        include: path.join(__dirname, 'src'),
+        // include: path.join(__dirname, 'scripts')
+        exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']
         }
       }
     ],
     loaders: [
-      // {
-      //   test: /\.styl$/,
-      //   loader: 'style-loader!css-loader!stylus-loader'
-      // },
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass?sourceMap'
@@ -39,8 +37,21 @@ module.exports = {
         ]
       },
       {
+        test: /\.(jpg|png|gif)$/,
+        loader: 'file-loader?name=images/[hash].[ext]'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&minetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        include: path.join(__dirname, 'src'),
+        // exclude: /node_modules/,
         loaders: [
           'react-hot',
           'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
@@ -48,7 +59,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: path.join(__dirname, 'src'),
+        // exclude: /node_modules/,
         loader: 'babel'
       }
     ]
@@ -56,13 +68,13 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.styl']
   }
-};
+}
 
-function getEntrySources(sources) {
+function getEntrySources (sources) {
   if (process.env.NODE_ENV !== 'production') {
-    sources.push('webpack-dev-server/client?http://0.0.0.0:8080');
-    sources.push('webpack/hot/only-dev-server');
+    sources.push('webpack-dev-server/client?http://0.0.0.0:8080')
+    sources.push('webpack/hot/only-dev-server')
   }
 
-  return sources;
+  return sources
 }
